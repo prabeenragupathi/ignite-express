@@ -38,6 +38,9 @@ export async function createApp({ projectName, language, eslint, git }) {
     // Create project folder
     await fs.mkdir(projectPath, { recursive: true });
 
+    //? creating dirs
+    await createFolders(projectPath);
+
     // Copy index file
     const indexFile = `index.${isTS ? "ts" : "js"}`;
     const srcContent = await fs.readFile(
@@ -135,5 +138,15 @@ export async function createApp({ projectName, language, eslint, git }) {
       console.error("⚠️ Cleanup failed:", cleanupErr);
     }
     throw err;
+  }
+}
+
+
+async function createFolders(projectPath) {
+  const folders = ["routes", "controllers", "models", "middlewares", "config"];
+
+  for (const folder of folders) {
+    const dirPath = path.join(projectPath, folder);
+    await fs.mkdir(dirPath, { recursive: true });
   }
 }
