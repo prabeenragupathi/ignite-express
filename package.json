@@ -1,6 +1,6 @@
 {
   "name": "quick-express-gen",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": " Instantly create a modern Express.js server — with TypeScript or JavaScript, CORS, Dotenv, ESLint, and Git — all from a single CLI.",
   "main": "bin/index.js",
   "type": "module",
