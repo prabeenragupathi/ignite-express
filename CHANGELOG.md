@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.4](https://github.com/prabeenragupathi/quick-express-gen/compare/v2.0.3...v2.0.4) (2025-04-24)
+
+
+### Bug Fixes
+
+* changed the version type ([aa3b2a7](https://github.com/prabeenragupathi/quick-express-gen/commit/aa3b2a71f7d438c1c64e44060aa0805f0b6d60a0))
+
 ### [2.0.3](https://github.com/prabeenragupathi/quick-express-gen/compare/v2.0.2...v2.0.3) (2025-04-24)
 
 
