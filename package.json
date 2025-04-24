@@ -29,7 +29,6 @@
     "fs-extra": "^11.3.0",
     "ora": "^8.2.0",
     "prompts": "^2.4.2",
-    "quick-express-gen": "file:",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
