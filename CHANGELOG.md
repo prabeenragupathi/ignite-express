@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## 2.1.0 (2025-04-24)
+
+
+### Features
+
+* fixed packagejson and gitignore copying method ([6e874fb](https://github.com/prabeenragupathi/quick-express-gen/commit/6e874fbc9cd7e12a9e5149d7e1584f51e5036413))
+
 ### [2.0.5](https://github.com/prabeenragupathi/quick-express-gen/compare/v2.0.4...v2.0.5) (2025-04-24)
 
 
