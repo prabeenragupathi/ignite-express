@@ -8,6 +8,8 @@ import path from "path";
 import fs from "fs/promises";
 import { readFileSync } from "fs";
 import { fileURLToPath } from "url";
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 
 // --- store cleanup info
 let projectPath = null;
@@ -75,8 +77,8 @@ const projectName = rawArgs.find(
 if (flags.version) {
   const __dirname = path.dirname(fileURLToPath(import.meta.url));
   const pkgPath = path.resolve(__dirname, '../package.json');
-  const pkg = JSON.parse(readFileSync(pkgPath, 'utf-8'));
-  
+  const pkg = require("../package.json");
+
   console.log(`ignite-express v${pkg.version}`);
   process.exit(0);
 }

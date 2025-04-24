@@ -28,14 +28,9 @@
     "execa": "^9.5.2",
     "expressgen": "file:",
     "fs-extra": "^11.3.0",
-    "genexpress": "file:",
-    "ignite-express": "file:",
-    "igniteexpress": "file:",
-    "igniteexpressquick": "file:",
     "ora": "^8.2.0",
     "prompts": "^2.4.2",
     "quick-express-gen": "file:",
-    "rapid-express": "file:",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
