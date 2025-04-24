@@ -8,7 +8,10 @@
     "ignite-express": "./bin/index.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major"
   },
   "keywords": [
     "npm",
@@ -28,5 +31,8 @@
     "ora": "^8.2.0",
     "prompts": "^2.4.2",
     "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "standard-version": "^9.5.0"
   }
 }

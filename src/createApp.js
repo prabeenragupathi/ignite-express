@@ -52,6 +52,11 @@ export async function createApp({ projectName, language, eslint, git }) {
     // Create .env
     await fs.writeFile(path.join(projectPath, ".env"), "PORT=3000\n");
 
+    //? config env
+    const envFilePath = path.join(projectPath, "config", "env.js");
+    const srcEnvPath = path.resolve(__dirname, `../templates/env.js`);
+    await fs.copyFile(srcEnvPath, envFilePath);
+
     // Create package.json
     const packageJson = {
       name: projectName,
@@ -119,7 +124,7 @@ export async function createApp({ projectName, language, eslint, git }) {
     if (git) {
       spinner.text = "Initializing Git...";
       execSync(`git init`, { stdio: "inherit" });
-      
+
       //? create .gitignore file
       await fs.copyFile(gitignoreSrc, path.join(projectPath, ".gitignore"));
     }
@@ -140,7 +145,6 @@ export async function createApp({ projectName, language, eslint, git }) {
     throw err;
   }
 }
-
 
 async function createFolders(projectPath) {
   const folders = ["routes", "controllers", "models", "middlewares", "config"];
