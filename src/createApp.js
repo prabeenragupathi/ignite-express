@@ -66,6 +66,9 @@ export async function createApp({ projectName, language, eslint, git }) {
       scripts: {
         start: isTS ? "ts-node index.ts" : "node index.js",
         dev: isTS ? "nodemon --exec ts-node index.ts" : "nodemon index.js",
+        release: "standard-version",
+        "release:minor": "standard-version --release-as minor",
+        "release:major": "standard-version --release-as major",
       },
       dependencies: {},
       devDependencies: {},
@@ -83,8 +86,15 @@ export async function createApp({ projectName, language, eslint, git }) {
     spinner.text = "Installing dependencies...";
     const deps = ["express", "cors", "dotenv"];
     const devDeps = isTS
-      ? ["typescript", "ts-node", "@types/node", "@types/express", "nodemon"]
-      : ["nodemon"];
+      ? [
+          "typescript",
+          "ts-node",
+          "@types/node",
+          "@types/express",
+          "nodemon",
+          "standard-version",
+        ]
+      : ["nodemon", "standard-version"];
 
     execSync(`npm install ${deps.join(" ")}`, { stdio: "inherit" });
     spinner.text = "Installing Dev dependencies...";
