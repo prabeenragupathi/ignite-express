@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.2.0](https://github.com/prabeenragupathi/quick-express-gen/compare/v3.1.3...v3.2.0) (2025-04-26)
+
+
+### Features
+
+* command line colors changed ([5e5f758](https://github.com/prabeenragupathi/quick-express-gen/commit/5e5f7584f7af8474fe68fbc712e49f9a7f18da3b))
+
 ### [3.1.3](https://github.com/prabeenragupathi/quick-express-gen/compare/v3.1.2...v3.1.3) (2025-04-26)
 
 
