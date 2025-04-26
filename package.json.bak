@@ -1,0 +1,38 @@
+{
+  "name": "quick-express-gen",
+  "version": "3.0.0",
+  "description": " Instantly create a modern Express.js server — with TypeScript or JavaScript, CORS, Dotenv, ESLint, and Git — all from a single CLI.",
+  "main": "bin/index.js",
+  "type": "module",
+  "bin": {
+    "quick-express-gen": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:major": "standard-version --release-as major"
+  },
+  "keywords": [
+    "npm",
+    "create",
+    "express",
+    "app",
+    "with",
+    "git"
+  ],
+  "author": "prabeen_ragupathi",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.4.1",
+    "execa": "^9.5.2",
+    "fs-extra": "^11.3.0",
+    "ora": "^8.2.0",
+    "prompts": "^2.4.2",
+    "quick-express-gen": "file:",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "standard-version": "^9.5.0"
+  }
+}

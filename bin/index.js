@@ -79,14 +79,14 @@ if (flags.version) {
   const pkgPath = path.resolve(__dirname, '../package.json');
   const pkg = require("../package.json");
 
-  console.log(`ignite-express v${pkg.version}`);
+  console.log(`quick-express-gen v${pkg.version}`);
   process.exit(0);
 }
 
 if (flags.help) {
   console.log(`
 Usage:
-  npx ignite-express [project-name] [options]
+  npx quick-express-gen [project-name] [options]
 
 Options:
   --typescript       Use TypeScript
