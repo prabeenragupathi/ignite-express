@@ -6,10 +6,8 @@ import ora from "ora";
 import { createApp } from "../src/createApp.js";
 import path from "path";
 import fs from "fs/promises";
-import { readFileSync } from "fs";
 import { fileURLToPath } from "url";
 import { createRequire } from "module";
-const require = createRequire(import.meta.url);
 
 // --- store cleanup info
 let projectPath = null;
@@ -76,7 +74,6 @@ const projectName = rawArgs.find(
 // ✅ Simple CLI flag handling
 if (flags.version) {
   const __dirname = path.dirname(fileURLToPath(import.meta.url));
-  const pkgPath = path.resolve(__dirname, '../package.json');
   const pkg = require("../package.json");
 
   console.log(`quick-express-gen v${pkg.version}`);
