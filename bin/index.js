@@ -8,6 +8,8 @@ import path from "path";
 import fs from "fs/promises";
 import { fileURLToPath } from "url";
 import { createRequire } from "module";
+const pkg = require("../package.json");
+
 
 // --- store cleanup info
 let projectPath = null;
@@ -74,7 +76,6 @@ const projectName = rawArgs.find(
 // ✅ Simple CLI flag handling
 if (flags.version) {
   const __dirname = path.dirname(fileURLToPath(import.meta.url));
-  const pkg = require("../package.json");
 
   console.log(`quick-express-gen v${pkg.version}`);
   process.exit(0);
