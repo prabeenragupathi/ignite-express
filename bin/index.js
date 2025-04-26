@@ -4,11 +4,15 @@ import prompts from "prompts";
 import chalk from "chalk";
 import ora from "ora";
 import { createApp } from "../src/createApp.js";
-import path from "path";
+import path, { dirname } from "path";
 import fs from "fs/promises";
 import { fileURLToPath } from "url";
-import { createRequire } from "module";
-import pkg from '../package.json' assert { type: 'json' };
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const pkgRaw = await readFile(path.join(__dirname, '../package.json'), 'utf-8');
+const pkg = JSON.parse(pkgRaw);
 
 
 // --- store cleanup info
@@ -75,25 +79,23 @@ const projectName = rawArgs.find(
 
 // ✅ Simple CLI flag handling
 if (flags.version) {
-  const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
-  console.log(`quick-express-gen v${pkg.version}`);
+  console.log(`${chalk.green("quick-express-gen")} ${chalk.redBright("v"+pkg.version)}`);
   process.exit(0);
 }
 
 if (flags.help) {
   console.log(`
-Usage:
-  npx quick-express-gen [project-name] [options]
-
-Options:
-  --typescript       Use TypeScript
-  --no-eslint        Skip ESLint config
-  --no-git           Don’t initialize Git
-  -y, --yes          Accept all defaults
-  -v, --version      Show version
-  -h, --help         Show help
-  `);
+    ${chalk.bold.green('Usage:')}
+      ${chalk.cyan('npx quick-express-gen')} ${chalk.yellow('[project-name]')} ${chalk.magenta('[options]')}
+    
+    ${chalk.bold.green('Options:')}
+      ${chalk.yellow('--typescript')}       ${chalk.white('Use TypeScript')}
+      ${chalk.yellow('--no-eslint')}         ${chalk.white('Skip ESLint config')}
+      ${chalk.yellow('--no-git')}             ${chalk.white('Don’t initialize Git')}
+      ${chalk.yellow('-y, --yes')}            ${chalk.white('Accept all defaults')}
+      ${chalk.yellow('-v, --version')}        ${chalk.white('Show version')}
+      ${chalk.yellow('-h, --help')}           ${chalk.white('Show help')}
+    `);
   process.exit(0);
 }
 
