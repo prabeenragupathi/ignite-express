@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.1.2](https://github.com/prabeenragupathi/quick-express-gen/compare/v3.1.1...v3.1.2) (2025-04-26)
+
+
+### Bug Fixes
+
+* import bug fixed ([924d3d6](https://github.com/prabeenragupathi/quick-express-gen/commit/924d3d6b8bd808763f066bbc025884b05d0c7f60))
+
 ### [3.1.1](https://github.com/prabeenragupathi/quick-express-gen/compare/v3.1.0...v3.1.1) (2025-04-26)
 
 
