@@ -8,7 +8,7 @@ import path from "path";
 import fs from "fs/promises";
 import { fileURLToPath } from "url";
 import { createRequire } from "module";
-const pkg = require("../package.json");
+import pkg from '../package.json' assert { type: 'json' };
 
 
 // --- store cleanup info
