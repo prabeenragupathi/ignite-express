@@ -7,6 +7,7 @@ import { createApp } from "../src/createApp.js";
 import path, { dirname } from "path";
 import fs from "fs/promises";
 import { fileURLToPath } from "url";
+import { readFile } from "fs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
