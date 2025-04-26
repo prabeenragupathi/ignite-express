@@ -7,12 +7,11 @@ import { createApp } from "../src/createApp.js";
 import path, { dirname } from "path";
 import fs from "fs/promises";
 import { fileURLToPath } from "url";
-import { readFile } from "fs";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const pkgRaw = await readFile(path.join(__dirname, '../package.json'), 'utf-8');
+const pkgRaw = await fs.readFile(path.join(__dirname, '../package.json'), 'utf-8');
 const pkg = JSON.parse(pkgRaw);
 
 
