@@ -134,10 +134,10 @@ export async function createApp({ projectName, language, eslint, git }) {
     if (git) {
       spinner.text = "Initializing Git...";
       execSync(`git init`, { stdio: "inherit" });
-
-      //? create .gitignore file
-      await fs.copyFile(gitignoreSrc, path.join(projectPath, ".gitignore"));
     }
+
+    //? create .gitignore file
+    await fs.copyFile(gitignoreSrc, path.join(projectPath, ".gitignore"));
 
     spinner.succeed();
 
