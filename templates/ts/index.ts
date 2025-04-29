@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Hello from Ignite Express!");
+  res.send("Hello from Quick Express Gen!");
 });
 
 app.listen(PORT, () => {
