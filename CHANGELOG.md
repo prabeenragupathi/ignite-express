@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.0.0](https://github.com/prabeenragupathi/quick-express-gen/compare/v4.0.0...v5.0.0) (2025-05-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* added new features
+
+### Features
+
+* added new features ([89ef21d](https://github.com/prabeenragupathi/quick-express-gen/commit/89ef21d2e0f7e8110c4c7ca56bd03c108d83543d))
+
 ## 4.0.0 (2025-04-29)
 
 
