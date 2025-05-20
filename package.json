@@ -19,7 +19,8 @@
     "express",
     "app",
     "with",
-    "git"
+    "git",
+    "quick-express-gen"
   ],
   "author": "prabeen_ragupathi",
   "license": "MIT",

@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
-import {PORT} from "./config/env.js";
+import {PORT} from "#config/env.js";
+import { errorHandler } from "#utils/error.js";
 
 const app = express();
 
@@ -11,6 +12,14 @@ app.get("/", (req, res) => {
   res.send("Hello from Quick Express Gen!");
 });
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server running at http://localhost:${PORT}`);
-});
+
+//! error handler middleware
+app.use(errorHandler);
+
+const startServer = () => {
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running at http://localhost:${PORT}`);
+  });
+};
+
+startServer();

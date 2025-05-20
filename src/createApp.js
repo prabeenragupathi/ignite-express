@@ -17,6 +17,7 @@ export async function createApp({ projectName, language, eslint, git }) {
     __dirname,
     `../templates/${isTS ? "ts" : "js"}`
   );
+  const utilsDir = path.resolve(__dirname, `../templates/utils`);
   const rootDir = path.resolve(
     import.meta.url.replace("file:///", ""),
     "../../"
@@ -50,12 +51,30 @@ export async function createApp({ projectName, language, eslint, git }) {
     await fs.writeFile(path.join(projectPath, indexFile), srcContent);
 
     // Create .env
-    await fs.writeFile(path.join(projectPath, ".env"), "PORT=3000\n");
+    await fs.writeFile(
+      path.join(projectPath, ".env"),
+      `PORT=3000\nNODE_ENV="development"`
+    );
 
     //? config env
     const envFilePath = path.join(projectPath, "config", "env.js");
     const srcEnvPath = path.resolve(__dirname, `../templates/env.js`);
     await fs.copyFile(srcEnvPath, envFilePath);
+
+    //?adding utils files
+    const utilsProjectPath = path.join(projectPath, "utils");
+    await fs.copyFile(
+      path.join(utilsDir, "transaction.js"),
+      path.join(utilsProjectPath, "transaction.js")
+    );
+    await fs.copyFile(
+      path.join(utilsDir, "error.js"),
+      path.join(utilsProjectPath, "error.js")
+    );
+    await fs.copyFile(
+      path.join(utilsDir, "asynHandler.js"),
+      path.join(utilsProjectPath, "asynHandler.js")
+    );
 
     // Create package.json
     const packageJson = {
@@ -69,6 +88,16 @@ export async function createApp({ projectName, language, eslint, git }) {
         release: "standard-version",
         "release:minor": "standard-version --release-as minor",
         "release:major": "standard-version --release-as major",
+      },
+      imports: {
+        "#root/*": "./*",
+        "#controllers/*": "./controllers/*",
+        "#models/*": "./models/*",
+        "#utils/*": "./utils/*",
+        "#routes/*": "./routes/*",
+        "#config/*": "./config/*",
+        "#services/*": "./services/*",
+        "#middlewares/*": "./middlewares/*",
       },
       dependencies: {},
       devDependencies: {},
@@ -157,7 +186,15 @@ export async function createApp({ projectName, language, eslint, git }) {
 }
 
 async function createFolders(projectPath) {
-  const folders = ["routes", "controllers", "models", "middlewares", "config"];
+  const folders = [
+    "routes",
+    "controllers",
+    "models",
+    "middlewares",
+    "config",
+    "services",
+    "utils",
+  ];
 
   for (const folder of folders) {
     const dirPath = path.join(projectPath, folder);
